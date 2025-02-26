@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile - InternTrack</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Student Profile</h1>
+        <button onclick="goBack()">Back</button>
+    </header>
+
+    <div class="container">
+        <h2>Internship Details</h2>
+        <button onclick="fetchSheetData()">View Profile</button>
+        <div id="loading">Loading...</div>
+        <div id="profile-data"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
+    <script src="../script/profile.js"></script>
+
+    <script>
+        function goBack() {
+            window.history.back(); // Go back to the previous page
+        }
+    </script>
+</body>
+</html>

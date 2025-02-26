@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - InternTrack</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>InternTrack - Student Dashboard</h1>
+        <button onclick="logout()">Logout</button>
+    </header>
+
+    <div class="container">
+        <h2 id="submit-details">Submit Internship Details</h2>
+        <div id="message-box"></div> <!-- Display messages -->
+        <form id="internship-form">
+            <label for="title">Internship Title:</label>
+            <input type="text" id="title" placeholder="Enter internship title" required>
+
+            <label for="company">Company Name:</label>
+            <input type="text" id="company" placeholder="Enter company name" required>
+
+            <label for="mobile">Mobile No.:</label>
+            <input type="text" id="mobile" placeholder="Enter 10-digit mobile number" required>
+
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" required>
+
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" required>
+
+            <label for="placement">Placement Type:</label>
+            <input type="text" id="placement" placeholder="Enter placement type" required>
+
+            <label for="stipend">Stipend (in Rs.):</label>
+            <input type="number" id="stipend" placeholder="Enter stipend amount">
+
+            <label for="industry">Research/Industry:</label>
+            <input type="text" id="industry" placeholder="Enter research/industry type">
+
+            <label for="location">Abroad/India:</label>
+            <input type="text" id="location" placeholder="Enter location (Abroad/India)">
+
+            <label for="permissionLetter">Permission Letter:</label>
+            <select id="permissionLetter">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <h2>View My Profile</h2>
+        <button onclick="fetchStudentDetails()">View Profile</button>
+        <div id="loading" style="display: none;">Loading...</div> <!-- Loading Indicator -->
+        <div id="profile-data"></div>
+    </div>
+
+    <script src="..\script\student_dashboard.js"></script>
+</body>
+</html>

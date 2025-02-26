@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Student",
+        "registerNumber": "SSN123",
+        "email": "student@example.com",
+        "password": "password123",
+        "role": "student"
+    },
+    {
+        "name": "Coordinator",
+        "registerNumber": "SSN321",
+        "email": "coordinator@example.com",
+        "password": "password321",
+        "role": "coordinator"
+    }
+]

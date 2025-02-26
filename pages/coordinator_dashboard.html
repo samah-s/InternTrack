@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordinator Dashboard</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="../assets/logo.png" alt="Logo" class="logo">
+            <h1>Coordinator Dashboard</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>View All Internship Data</h2>
+        <input type="text" id="search" placeholder="Search student..." onkeyup="filterTable()">
+        <div id="profile-data"></div> <!-- Table will be inserted here -->
+
+        <h2>Review Student Submissions</h2>
+        <div class="navigation">
+            <button onclick="prevRecord()">Previous</button>
+            <button onclick="nextRecord()">Next</button>
+        </div>
+        <div id="record-view"></div> <!-- Individual record details -->
+
+        <h2>Edit Student Internship Details</h2>
+        <div id="edit-section">
+            <label for="edit-name">Name:</label>
+            <input type="text" id="edit-name">
+            <label for="edit-internship">Internship:</label>
+            <input type="text" id="edit-internship">
+            <button onclick="saveEdit()">Save</button>
+        </div>
+    </main>
+
+    <script src="../script/coordinator_handler.js"></script>
+</body>
+</html>
