@@ -67,43 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// function fetchStudentDetails() {
-//     const user = JSON.parse(localStorage.getItem("loggedInUser"));
-//     if (!user) {
-//         showMessage("User not logged in!", "error");
-//         return;
-//     }
-
-//     const loadingIndicator = document.getElementById("loading");
-//     loadingIndicator.style.display = "block"; // Show loading indicator
-
-//     fetch(`${GOOGLE_SHEET_WEB_APP_URL}?registerNumber=${user.registerNumber}`)
-//         .then(response => response.json())
-//         .then(data => {
-//             loadingIndicator.style.display = "none"; // Hide loading
-
-//             if (data === "Not Found") {
-//                 profileData.innerHTML = "<p>No records found.</p>";
-//             } else {
-//                 profileData.innerHTML = `
-//                     <p><strong>Register Number:</strong> ${data[1]}</p>
-//                     <p><strong>Name:</strong> ${data[2]}</p>
-//                     <p><strong>Title:</strong> ${data[3]}</p>
-//                     <p><strong>Company:</strong> ${data[7]}</p>
-//                     <p><strong>Start Date:</strong> ${data[5]}</p>
-//                     <p><strong>End Date:</strong> ${data[6]}</p>
-//                     <p><strong>Placement:</strong> ${data[8]}</p>
-//                     <p><strong>Stipend:</strong> ${data[9]}</p>
-//                     <p><strong>Research/Industry:</strong> ${data[10]}</p>
-//                     <p><strong>Abroad/India:</strong> ${data[11]}</p>
-//                 `;
-//             }
-//         })
-//         .catch(error => {
-//             loadingIndicator.style.display = "none"; // Hide loading
-//             showMessage("Error fetching profile details. Try again!", "error");
-//         });
-// }
 
 function fetchStudentDetails() {
     window.location.href = "../pages/profile.html"; // Redirect to the profile page
@@ -121,3 +84,61 @@ function showMessage(message, type) {
     messageBox.innerHTML = `<p class="${type}">${message}</p>`;
     setTimeout(() => { messageBox.innerHTML = ""; }, 4000); // Hide after 4 seconds
 }
+
+
+function uploadBonafideLetter() {
+    const user = JSON.parse(localStorage.getItem("loggedInUser"));
+    const fileInput = document.getElementById("bonafideLetter");
+    const file = fileInput.files[0];
+
+    if (!file) {
+        alert("Please select a file.");
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append("bonafideLetter", file);
+
+    // Add form details for verification
+    const fields = ["title", "company", "mobile", "startDate", "endDate", "placement", "stipend", "industry", "location"];
+    fields.forEach(field => {
+        formData.append(field, document.getElementById(field).value);
+    });
+
+    // Step 1: Verify document details
+    fetch("http://localhost:5001/verify", {
+        method: "POST",
+        body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert("Verification passed: " + JSON.stringify(data.mismatches) + data.message);
+            console.log("Verification passed, proceeding to upload.");
+            uploadToGoogleDrive(file, user.registerNumber);
+        } else {
+            alert("Verification failed: " + JSON.stringify(data.mismatches) + data.message);
+        }
+    })
+    .catch(error => console.error("Error:", error));
+}
+
+
+
+async function uploadToGoogleDrive(file, registerNumber) {
+    const formData = new FormData();
+    formData.append("bonafideLetter", file);
+    formData.append("registerNumber", registerNumber);
+
+    await fetch("http://127.0.0.1:5000/uploadBonafide", {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "application/json/pdf" },
+        mode: "cors"
+    })
+    .then(response => response.json())
+    .then(data => alert("Upload successful! File ID: " + data.fileId))
+    .catch(error => console.error("Upload error:", error));
+}
+
+

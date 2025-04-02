@@ -45,15 +45,66 @@ function sortTable(columnName) {
     renderTable([tableData[0], ...sortedData]);
 }
 
-// Show Individual Record
+
+
+// function fetchBonafide(registerNumber) {
+//     fetch(`http://localhost:5002/fetchBonafide/${registerNumber}`)
+//         .then(response => response.json())
+//         .then(data => {
+//             if (data.error) {
+//                 document.getElementById("record-view").innerHTML += `<p style="color: red;">${data.error}</p>`;
+//             } else {
+//                 document.getElementById("record-view").innerHTML += 
+//                     `<p><strong>Bonafide Letter:</strong> <a href="${data.link}" target="_blank">View Document</a></p>`;
+//             }
+//         })
+//         .catch(error => console.error("Error fetching bonafide letter:", error));
+// }
+
+// function showRecord(index) {
+//     if (index >= tableData.length || index < 1) return;
+
+//     let record = tableData[index];
+//     let details = `<h3>Student Details</h3>
+//                    <p><strong>Name:</strong> ${record[0]}</p>
+//                    <p><strong>Internship:</strong> ${record[1]}</p>`;
+//     document.getElementById("record-view").innerHTML = details;
+
+//     // Fetch and display the student's bonafide letter
+//     fetchBonafide(record[1]); // Assuming register number is in record[2]
+// }
+
+function fetchBonafide(registerNumber) {
+    fetch(`http://localhost:5002/fetchBonafide/${registerNumber}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                document.getElementById("record-view").innerHTML += 
+                    `<p style="color: red;">${data.error}</p>`;
+            } else {
+                document.getElementById("record-view").innerHTML += 
+                    `<p><strong>Bonafide Letter:</strong></p>
+                     <iframe src="https://drive.google.com/file/d/${data.fileId}/preview" 
+                             width="600" height="400" allow="autoplay"></iframe>`;
+            }
+        })
+        .catch(error => console.error("Error fetching bonafide letter:", error));
+}
+
 function showRecord(index) {
     if (index >= tableData.length || index < 1) return;
 
     let record = tableData[index];
-    let details = "<h3>Student Details</h3><p><strong>Name:</strong> " + record[0] + "</p>";
-    details += "<p><strong>Internship:</strong> " + record[1] + "</p>";
+    let details = `<h3>Student Details</h3>
+                   <p><strong>Name:</strong> ${record[0]}</p>
+                   <p><strong>Roll Number:</strong> ${record[1]}</p>`;
+    
     document.getElementById("record-view").innerHTML = details;
+
+    // Fetch and display the student's bonafide letter
+    fetchBonafide(record[1]); // Assuming register number is in record[2]
 }
+
 
 // Next/Previous Navigation
 function nextRecord() {

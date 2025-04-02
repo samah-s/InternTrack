@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "ip-student-internship",
+  "private_key_id": "8ebb46ff373390a644d0eddbfb96d096bb9f0f0c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC2ni4z4L08cMM9\nZCz2ddwl+lrdlAfUfSIG9IweVnPsI/sCmGFh7mcZgVLZJB5NGAeu6Rd/qRIbKghg\ntS8J7TxVSdRzxV+ZmTaGrjZlkvsqX+Bwy1onTS1siSVoN5Isa1kzhg4RjU0gf6D5\n2hbcIrIAulPT3NPVcOFy8T4Z6cD03OvE+7EMp3mbpdNNETrY0W2tJbtUzj8GUnfs\nnhVG0S3upViaaH7p7quT1tThcyfI7pLvbBtNVJQHfsJ8xwdq+dGmLVSg5X2yhkfB\n1hJUG/xJ7BfNfmwbPz3TduUPidfDZmsXT61rG0+U5DjBxF9AU1qMLE/PWdgHswsn\n1ctCHq0LAgMBAAECggEAGDD7eostUQINwGaH1PJSAoSYCuhJjUAyWheFLvOm5u5G\nmdZpIsRRIL4n+nSKwGMMNC3T8L5gk/v3y3p/oQyt7w0ZDr5jvADhieqEHDqMo9Vl\nnFY5OsxCKzGTz1V6kKsmeukpmJujpEgj9qqJrV8PPizGCWJ50WQ4XrX50wxLL7nm\naXaxOUMq5hpopBNHjsojfvyZElB8SpzKvab7WZLQgIif0sDOjjzgC4bUTAKFAteP\nNusYbTMhuIqjlMLY9+jpam31ZwH/5iCGWj50OJqQOEWe16k0v/3jI0zL1a2Enztc\n8P52fn8imWElfWzs0LQWYWVKVoGQwJ9Z8qHoWsN5MQKBgQD6WV2S7J5zM55bGs1l\nDWBwoEc+j2MFvR3nS425ckb3OE/na/T/CDQQMSLATHYnluyg4+B/miGKbNhP05tq\njhf2ZGCcTdcPj1C+bQYJTy3PM3D/k5uBGmEVfVKB0WtfkS5c8Tl5VwfBHIPNU3ea\n6ziZX+p2dLIMJ4YW9+GafJacKQKBgQC6vW6ufzWJVRbUhuBnjw9gbdSvnrH8TZYv\n+dbMl+syFRA0dy2V6FTMV63I/aUCeZEL2ieToaNMaZ8kJ0uLt9b50Mr3LsttfrI0\neSqgZWtqF6Kz5Er1CHn3HdAydNtgdNJZGGSEeOAWm7rP8ksCnu8e3B6/SI2TDsXC\nsrSTogsmEwKBgCk5nhcbr9v4nBMUjs4dLcxeGF1M71l6kvoLjwMCtnzvYPkS5f05\nNJmV/cr8zFgomj7ER6u7jdplohlDF0ysqXWBggc7Kjb9uqYg/eV6jGiaZ/kuLWVN\nGr+XK4cFHVFXbvMPJg+9LSG3uFyPahqwsVlQWiO3g7pMp+AQYa425fZBAoGBAIMG\np8KIP2g86+fzO0Fuf7uJVNJk5z3AssC27KBheAWMAfLOLI4ill1KqAV+82jpI3zN\ndTeBErNq6N7VM4y1UYG3nrIRg2swmpl26xHgF545N1BBvtZvPCTIJm1A0Sy8y1r4\nYo8QwSsb2dhOiZMtMVrV2D0fCzdEBj62ZT2xVWFBAoGBAIJEQr3YlkypgLdly43n\nPPX+68Ga5jZZgO/KMIRchC0VJzSimvp5JOq/URgkH3GrxEGPpxeiOeD0jGgqRMXO\nvhmHA1Dbd42Gi4l8jPDX0JxK+e9J5wBSbzhC51X1zvyIeXbqfdcUqzLfNurz9EPa\nWdVI/oCklhSkndPjwrp0fO26\n-----END PRIVATE KEY-----\n",
+  "client_email": "developer@ip-student-internship.iam.gserviceaccount.com",
+  "client_id": "100718901094832048317",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/developer%40ip-student-internship.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
